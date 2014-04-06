@@ -104,6 +104,10 @@ drawAll = ->
             $('#popup .title').text(cur[0])
             $('#popup .price').text('$'+cur[4]?.toFixed(2))
             $('#popup').show()
+            $("#sendTextBtn").data('event-title',cur[0]);
+            $("#sendTextBtn").data('event-venue',cur[2]);
+            $("#sendTextBtn").data('event-time',cur[3]);
+            $("#sendTextBtn").data('event-price',cur[4]?.toFixed(2));
           layer.add rect
           # if i > 0
           #   image.cache()
@@ -254,6 +258,18 @@ initController = (autoConnect, api) ->
       api.onSwipeLeft()
     else if event.which is 37 # LEFT
       api.onSwipeRight()
+
+
+  $("#sendTextBtn").on 'click', (event) ->
+    console.log("clicked")
+    tel = prompt("Please enter your phone number","+14153519635")
+    url = '/sendText/?tel='+tel
+    url += "&title="+$(this).data('event-title')
+    url += "&price="+$(this).data('event-price')
+    url += "&venue="+$(this).data('event-venue')
+    url += "&time="+$(this).data('event-time')
+
+    $.get(url);
 
   controller.on('connect', -> console.log 'Leap Motion Server connected.')
   controller.on('disconnect', -> console.log 'Leap Motion Server disconnected.')

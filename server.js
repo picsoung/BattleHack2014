@@ -26,30 +26,36 @@ app.get('/events', function(req, res) {
     res.sendfile(html_dir + 'events.html');
 });
 
-app.get('/sendText',function(req,res){
-	client.sms.messages.create({
-    to:'+14153519635',
-    from:'+14252742716',
-    body:'ahoy hoy! Testing Twilio and node.js'
-}, function(error, message) {
-    // The HTTP request to Twilio will run asynchronously. This callback
-    // function will be called when a response is received from Twilio
-    // The "error" variable will contain error information, if any.
-    // If the request was successful, this value will be "falsy"
-    if (!error) {
-        // The second argument to the callback will contain the information
-        // sent back by Twilio for the request. In this case, it is the
-        // information about the text messsage you just sent:
-        console.log('Success! The SID for this SMS message is:');
-        console.log(message.sid);
- 
-        console.log('Message sent on:');
-        console.log(message.dateCreated);
-        alert("Message sent");
-    } else {
-        console.log('Oops! There was an error.');
-    }
+app.get('/sms', function(req, res) {
+    res.sendfile(html_dir + 'sms.html');
 });
+
+app.get('/sendText',function(req,res){
+	console.log(req.query);
+	var bodyText = 'Events in town today at '+req.query.venue+' at '+req.query.time+' - '+req.query.title+"for $"+req.query.price;
+	console.log(bodyText);
+	client.sms.messages.create({
+	    to:req.query.tel,
+	    from:'+14252742716',
+	    body: bodyText,
+		}, function(error, message) {
+	    // The HTTP request to Twilio will run asynchronously. This callback
+	    // function will be called when a response is received from Twilio
+	    // The "error" variable will contain error information, if any.
+	    // If the request was successful, this value will be "falsy"
+	    if (!error) {
+	        // The second argument to the callback will contain the information
+	        // sent back by Twilio for the request. In this case, it is the
+	        // information about the text messsage you just sent:
+	        console.log('Success! The SID for this SMS message is:');
+	        console.log(message.sid);
+	 
+	        console.log('Message sent on:');
+	        console.log(message.dateCreated);
+	    } else {
+	        console.log('Oops! There was an error.'+error);
+	    }
+	});
 
 
 });
