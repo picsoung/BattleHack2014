@@ -30,6 +30,10 @@ app.get('/sms', function(req, res) {
     res.sendfile(html_dir + 'sms.html');
 });
 
+app.get('/maps', function(req, res) {
+    res.sendfile(html_dir + 'maps.html');
+});
+
 app.get('/sendText',function(req,res){
 	console.log(req.query);
 	var bodyText = 'Events in town today at '+req.query.venue+' at '+req.query.time+' - '+req.query.title+"for $"+req.query.price;

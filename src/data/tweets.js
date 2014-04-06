@@ -71,66 +71,80 @@ var Tweets  = {
 
 		// Tweets.getTrendingTopics(function(data){
 			//FAKE DATA
-			var data =[{
-			name: "#BuyBuckWildOniTunes",
-			query: "%23BuyBuckWildOniTunes",
-			url: "http://twitter.com/search?q=%23BuyBuckWildOniTunes",
-			promoted_content: null
-			},
-			{
-			name: "#WWEHOF",
-			query: "%23WWEHOF",
-			url: "http://twitter.com/search?q=%23WWEHOF",
-			promoted_content: null
-			},
-			{
-			name: "Aaron Harrison",
-			query: "%22Aaron+Harrison%22",
-			url: "http://twitter.com/search?q=%22Aaron+Harrison%22",
-			promoted_content: null
-			},
-			{
-			name: "#FinalFour",
-			query: "%23FinalFour",
-			url: "http://twitter.com/search?q=%23FinalFour",
-			promoted_content: null
-			},
-			{
-			name: "#PixelRaceGame",
-			query: "%23PixelRaceGame",
-			url: "http://twitter.com/search?q=%23PixelRaceGame",
-			promoted_content: null
-			},
-			{
-			name: "Uconn vs Kentucky",
-			query: "%22Uconn+vs+Kentucky%22",
-			url: "http://twitter.com/search?q=%22Uconn+vs+Kentucky%22",
-			promoted_content: null
-			},
-			{
-			name: "Wisconsin",
-			query: "Wisconsin",
-			url: "http://twitter.com/search?q=Wisconsin",
-			promoted_content: null
-			},
-			{
-			name: "#MarchMadness",
-			query: "%23MarchMadness",
-			url: "http://twitter.com/search?q=%23MarchMadness",
-			promoted_content: null
-			},
-			{
-			name: "Captain America",
-			query: "%22Captain+America%22",
-			url: "http://twitter.com/search?q=%22Captain+America%22",
-			promoted_content: null
-			},
-			{
-			name: "Florida",
-			query: "Florida",
-			url: "http://twitter.com/search?q=Florida",
-			promoted_content: null
-			}];
+			var data =[
+			    {
+			        "trends": [
+			            {
+			                "name": "#BuyBuckWildOniTunes",
+			                "query": "%23BuyBuckWildOniTunes",
+			                "url": "http://twitter.com/search?q=%23BuyBuckWildOniTunes",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "#WWEHOF",
+			                "query": "%23WWEHOF",
+			                "url": "http://twitter.com/search?q=%23WWEHOF",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "Yuvi",
+			                "query": "Yuvi",
+			                "url": "http://twitter.com/search?q=Yuvi",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "Aaron Harrison",
+			                "query": "%22Aaron+Harrison%22",
+			                "url": "http://twitter.com/search?q=%22Aaron+Harrison%22",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "Captain America",
+			                "query": "%22Captain+America%22",
+			                "url": "http://twitter.com/search?q=%22Captain+America%22",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "#FinalFour",
+			                "query": "%23FinalFour",
+			                "url": "http://twitter.com/search?q=%23FinalFour",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "Kentucky",
+			                "query": "Kentucky",
+			                "url": "http://twitter.com/search?q=Kentucky",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "Starbucks",
+			                "query": "Starbucks",
+			                "url": "http://twitter.com/search?q=Starbucks",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "#UConn",
+			                "query": "%23UConn",
+			                "url": "http://twitter.com/search?q=%23UConn",
+			                "promoted_content": null
+			            },
+			            {
+			                "name": "Taco Bell",
+			                "query": "%22Taco+Bell%22",
+			                "url": "http://twitter.com/search?q=%22Taco+Bell%22",
+			                "promoted_content": null
+			            }
+			        ],
+			        "as_of": "2014-04-06T18:46:18Z",
+			        "created_at": "2014-04-06T18:40:30Z",
+			        "locations": [
+			            {
+			                "name": "San Francisco",
+			                "woeid": 2487956
+			            }
+			        ]
+			    }
+			];
 			var trending_topics = data;
 			for(var i=0;i<trending_topics.length-1;i++){
 				console.log('trending',trending_topics[i]);

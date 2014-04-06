@@ -268,7 +268,6 @@ initController = (autoConnect, api) ->
     url += "&price="+$(this).data('event-price')
     url += "&venue="+$(this).data('event-venue')
     url += "&time="+$(this).data('event-time')
-
     $.get(url);
 
   controller.on('connect', -> console.log 'Leap Motion Server connected.')
