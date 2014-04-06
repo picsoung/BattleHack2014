@@ -87,7 +87,7 @@ drawAll = ->
             shadowColor: 'black'
             shadowBlur: 20
             shadowOpacity: 0.7
-            text: cur[0] + "\n" + cur[2] + "\n" + cur[3]
+            text: cur[0] + "\n" + cur[2] + "\n" + moment(cur[3]).calendar();
           )
           layer.add text
           rect = new Kinetic.Rect(
@@ -106,7 +106,7 @@ drawAll = ->
             $('#popup').show()
             $("#sendTextBtn").data('event-title',cur[0]);
             $("#sendTextBtn").data('event-venue',cur[2]);
-            $("#sendTextBtn").data('event-time',cur[3]);
+            $("#sendTextBtn").data('event-time',moment(cur[3]).calendar());
             $("#sendTextBtn").data('event-price',cur[4]?.toFixed(2));
           layer.add rect
           # if i > 0
