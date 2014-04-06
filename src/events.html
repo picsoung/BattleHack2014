@@ -11,6 +11,9 @@
   <div id="popup" style="display:none">
     <h1 class="title">The Family Stone</h1>
     <h2 class="price">$32.99</h2>
+    <div "sendByText">
+      <button id="sendTextBtn"><i class="fa fa-phone-square"></i>Send by Text</button>
+    </div>
     <p class="more"><script src='https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=nicolas@3scale.net'
     data-button='qr'
     data-name='Product via QR code'
@@ -21,7 +24,9 @@
     data-tax='0'
     data-callback='http://localhost.com'
     data-env='sandbox'
-></script></p>
+></script>
+
+</p>
   <h2>Scan this QR code with your phone to buy tickets!</h2>
   </div>
   <script src="lib/jquery.js"></script>
@@ -32,5 +37,13 @@
   <script src="data/instagram.js"></script>
   <script src="data/events.js"></script>
   <script src="ui/events.js"></script>
+
+  <script type="text/javascript">
+  $("#sendTextBtn").click(function(){
+    console.log("clicked");
+    // $.get('/sendText');
+    // alert("Message sent");
+  })
+  </script>
 </body>
 </html>
